@@ -61,20 +61,20 @@ controller.contactGet = function(req, res){
 controller.contactMessage = function(req, res){
     console.log("controlador de envio");
     var query = 'INSERT INTO consultas ( nombre, email, consulta ) values ( ?, ?, ? )'
-    var params = [req.body.name, req.body.email, req.body.message];
+    var params = [req.body.namemvd, req.body.emailmvd, req.body.messagemvd];
 
     database.query(query, params)
     .then( results => {
         
         console.log(results);
         console.log( { success: true, "dbResponse": results } );
-        res.render('pages/contact');
+        res.render('pages/');
     })
     .catch( err => {
         
         console.log(err);
         console.log( { error: err } );
-        res.render('pages/contact');
+        res.render('pages/');
     })
 }
 
