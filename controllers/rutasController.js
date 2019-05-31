@@ -184,34 +184,10 @@ controller.ListaGet = function(req, res){
 }
 
 
-controller.contactPost=function(req, res){
-    //ej
-    var query = 'INSERT INTO consultas ( nombre, email, consulta ) values ( ?, ?, ? )'
-    var params = [req.body.name, req.body.email, req.body.message];
-
-    database.query(query, params)
-    .then( results => {
-        alert("aqui");
-        console.log(results);
-        res.json( { success: true, "dbResponse": results } );
-	})
-    .catch( err => {
-        alert("error");
-        console.log(err);
-        res.json( { error: err } );
-    })
-    
-
 
     
-    /*connection.query('USE ' + dbconfig.database);
-    connection.query(insertQuery,function(err,rows){
-        res.redirect('/');
-        console.log(err);
-        console.log(rows);
-        
-        
-    });	*/
-}
+
+
+
 
 module.exports = controller;
