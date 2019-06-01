@@ -92,6 +92,26 @@ controller.galeriaGet = function(req, res){
     res.render('pages/galeria');
 }
 
+controller.galeria1Get = function(req, res){
+    console.log('galeria1');
+    res.render('pages/galeria1');
+}
+
+controller.galeria2Get = function(req, res){
+    console.log('galeria2');
+    res.render('pages/galeria2');
+}
+
+controller.galeria3Get = function(req, res){
+    console.log('galeria3');
+    res.render('pages/galeria3');
+}
+
+controller.galeria4Get = function(req, res){
+    console.log('galeria4');
+    res.render('pages/galeria4');
+}
+
 controller.priceGet = function(req, res){
     console.log('price');
     res.render('pages/price');
