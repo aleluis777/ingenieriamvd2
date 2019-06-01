@@ -60,22 +60,25 @@ controller.contactGet = function(req, res){
 }
 controller.contactMessage = function(req, res){
     console.log("controlador de envio");
-    var query = 'INSERT INTO consultas ( nombre, email, consulta ) values ( ?, ?, ? )'
-    var params = [req.body.namemvd, req.body.emailmvd, req.body.messagemvd];
+    if(req.body.habilitacionmvd=='true'){
+        var query = 'INSERT INTO consultas ( nombre, email, consulta ) values ( ?, ?, ? )'
+        var params = [req.body.namemvd, req.body.emailmvd, req.body.messagemvd];
 
-    database.query(query, params)
-    .then( results => {
+        database.query(query, params)
+        .then( results => {
+            
+            console.log(results);
+            console.log( { success: true, "dbResponse": results } );
+            res.redirect('/');
+        })
+        .catch( err => {
+            
+            console.log(err);
+            console.log( { error: err } );
+            res.redirect('/');
+        })
         
-        console.log(results);
-        console.log( { success: true, "dbResponse": results } );
-        res.render('pages/');
-    })
-    .catch( err => {
-        
-        console.log(err);
-        console.log( { error: err } );
-        res.render('pages/');
-    })
+    }
 }
 
 
@@ -162,7 +165,7 @@ controller.ListaGet = function(req, res){
 
 
 controller.contactPost=function(req, res){
-    //ejemplo
+    //ej
     var query = 'INSERT INTO consultas ( nombre, email, consulta ) values ( ?, ?, ? )'
     var params = [req.body.name, req.body.email, req.body.message];
 

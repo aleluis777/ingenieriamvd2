@@ -4,7 +4,7 @@ const rutasController = require('../controllers/rutasController');
 
 
 //Rutas de alarmas
-router.post('/send', rutasController.contactPost);
+router.post('/send', rutasController.contactMessage);
 router.get('/index', rutasController.indexGet);
 router.get('/', rutasController.indexGet);
 router.get('/blog-detail-leftbar', rutasController.blog_detail_leftbarGet);

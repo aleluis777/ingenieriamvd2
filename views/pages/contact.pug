@@ -70,15 +70,30 @@ block view
                 | (01) 52 84005
 
           form(action="addMessage", method="post")
+            input(hidden type='text' value='true' name='habilitacionmvd')
             div.form-group
               label Nombres y Apellidos *
-              input.form-control(type='text', name='name', required='')
+              input.form-control(type='text', name='namemvd', required='')
             div.form-group
               label Email *
-              input.form-control(type='email', name='email', required='')
+              input.form-control(type='email', name='emailmvd', required='')
             div.form-group
               label Mensaje *
-              textarea.form-control(name='message', required='')
+              textarea.form-control(name='messagemvd', required='')
             div.form-group
               button.btn(type='submit', value='Enviar') Enviar
   // PAGE CONTENT END
+    form(action="addMessage", method="post")
+              input(hidden type='text' value='true' name='habilitacionmvd')
+                          
+              div.form-group
+                label(style="color:white") Nombres y Apellidos *
+                input.form-control(type='text', name='namemvd', required='')
+              div.form-group
+                label(style="color:white") Email *
+                input.form-control(type='email', name='emailmvd', required='')
+              div.form-group
+                label(style="color:white") Mensaje *
+                textarea.form-control(name='messagemvd', required='')
+              div.form-group
+                button.btn(type='submit', value='Enviar') Enviar
